@@ -11,18 +11,43 @@
         alt="Confab - real time chat room for Dev's"
       />
     </div>
+    <div class="alerts">
+      <div
+        v-if="projects.length == 0"
+        class="alert alert-secondary my-3"
+        role="alert"
+      >
+        Aww... Don't cry, no project's posted yet!
+      </div>
+    </div>
     <div class="section-main my-5">
-      <div class="card border-light mb-3">
-        <div class="card-header">Progress</div>
+      <div
+        class="card border-light mb-3"
+        v-for="(project, index) in projects"
+        :key="index"
+      >
         <div class="card-body text-secondary">
-          <h5 class="card-title">University | User Management System</h5>
-          <p class="card-text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut
-            laborum modi amet eligendi nemo, est voluptate vero, quae ipsa quod
-            nisi odit neque, magnam accusantium? Delectus sed obcaecati eveniet.
-            Exercitationem?
+          <h5 class="card-title">{{ project.title }}</h5>
+          <div v-if="project.status == 'S'" class="badge bg-dark my-1">
+            To be Started
+          </div>
+          <div v-if="project.status == 'P'" class="badge bg-warning my-1">
+            On Going
+          </div>
+          <div v-if="project.status == 'C'" class="badge bg-danger my-1">
+            Canceled
+          </div>
+          <p class="card-text my-2">
+            {{ project.description | shorten }}
           </p>
-          <button class="btn btn-light">Collaborate</button>
+          <div class="card-actions">
+            <button
+              @click="viewProject(project._id)"
+              class="btn btn-link text-primary text-decoration-none"
+            >
+              View Details
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -32,12 +57,26 @@
 <script>
 export default {
   name: "Activity",
-  created() {},
-  data() {
-    return {};
+  created() {
+    this.$store.dispatch("FETCH_PROJECTS");
+  },
+  computed: {
+    projects() {
+      return this.$store.getters.LOAD_PROJECTS;
+    },
   },
   props: {},
-  methods: {},
+  methods: {
+    viewProject(id) {
+      this.$router.push({ name: "ViewProject", params: { id } });
+    },
+  },
+  filters: {
+    shorten: function(value) {
+      value = value.substring(0, 100) + "...";
+      return value;
+    },
+  },
 };
 </script>
 

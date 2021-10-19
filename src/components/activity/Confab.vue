@@ -11,6 +11,11 @@
         alt="Confab - real time chat room for Dev's"
       />
     </div>
+    <div class="alerts my-3">
+      <!-- <div class="alert alert-secondary" role="alert">
+        Aww... Don't cry, no rooms created yet!
+      </div> -->
+    </div>
     <div class="section-main my-5">
       <div class="card border-light mb-3">
         <div class="card-header">TBS</div>

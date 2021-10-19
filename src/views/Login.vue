@@ -39,7 +39,6 @@
         >
           Create a new Account?
         </button>
-        <p class="">{{ showToken }}</p>
       </form>
     </div>
   </div>
@@ -137,7 +136,8 @@ $mustard: #f9bb0f;
 
 #login-wrapper {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100%;
   background: $primary; /* fallback for old browsers */
   // background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
   // background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

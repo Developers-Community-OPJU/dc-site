@@ -31,7 +31,7 @@
       <div class="row">
         <div class="col-lg-8 col-sm-12 col-md-12 offset-2">
           <div class="row d-flex justify-content-between">
-            <div class="col-lg-3 ">
+            <div class="col-lg-3 col-md-4 c0l-sm-12 ">
               <div class="dc-card" data-aos="fade-up" data-aos-duration="800">
                 <div class="card-img text-center">
                   <img
@@ -47,7 +47,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 ">
+            <div class="col-lg-3 col-md-4 c0l-sm-12 ">
               <div class="dc-card" data-aos="fade-up" data-aos-duration="1100">
                 <div class="card-img text-center">
                   <img
@@ -63,7 +63,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 ">
+            <div class="col-lg-3 col-md-4 c0l-sm-12 ">
               <div class="dc-card" data-aos="fade-up" data-aos-duration="1600">
                 <div class="card-img text-center">
                   <img
@@ -92,7 +92,7 @@
       <div class="row">
         <div class="col-lg-8 col-sm-12 col-md-12 offset-2">
           <div class="row d-flex justify-content-between">
-            <div class="col-lg-3 ">
+            <div class="col-lg-3 col-md-4 c0l-sm-12 ">
               <div class="dc-card" data-aos="fade-up" data-aos-duration="800">
                 <div class="card-img text-center">
                   <img
@@ -105,7 +105,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 ">
+            <div class="col-lg-3 col-md-4 c0l-sm-12 ">
               <div class="dc-card" data-aos="fade-up" data-aos-duration="1100">
                 <div class="card-img text-center">
                   <img
@@ -118,7 +118,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 ">
+            <div class="col-lg-3 col-md-4 c0l-sm-12 ">
               <div class="dc-card" data-aos="fade-up" data-aos-duration="1600">
                 <div class="card-img text-center">
                   <img
@@ -137,7 +137,7 @@
       <div class="row">
         <div class="col-lg-8 col-sm-12 col-md-12 offset-2">
           <div class="row d-flex justify-content-between">
-            <div class="col-lg-3 ">
+            <div class="col-lg-3 col-md-4 c0l-sm-12 ">
               <div class="dc-card" data-aos="fade-up" data-aos-duration="800">
                 <div class="card-img text-center">
                   <img
@@ -150,7 +150,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 ">
+            <div class="col-lg-3 col-md-4 c0l-sm-12 ">
               <div class="dc-card" data-aos="fade-up" data-aos-duration="1100">
                 <div class="card-img text-center">
                   <img
@@ -163,7 +163,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 ">
+            <div class="col-lg-3 col-md-4 c0l-sm-12 ">
               <div class="dc-card" data-aos="fade-up" data-aos-duration="1600">
                 <div class="card-img text-center">
                   <img
@@ -188,8 +188,10 @@
         implement it.<span class="quote">"</span>
       </p>
       <div class="journey">
-        <p class="text-center text">Let's begin the journey together</p>
-        <p class="text-center block"><strong>- Team DC</strong></p>
+        <div class="container">
+          <p class="text-center text">Let's begin the journey together</p>
+          <p class="text-center block"><strong>- Team DC</strong></p>
+        </div>
       </div>
     </section>
 
@@ -254,7 +256,7 @@
     <section class="section-issues-support p-5">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center">
+          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <img
               draggable="false"
               class="img-fluid img-support"
@@ -262,7 +264,7 @@
               alt="dc anonymous support"
             />
           </div>
-          <div class="col-lg-12 text-center">
+          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <h1 class="text-center">Let us support Anonymously!</h1>
             <button
               type="button"
@@ -568,15 +570,27 @@ $mustard: #f9bb0f;
   &-section {
     padding: 10rem;
     padding-bottom: 5rem;
+    @media (max-width: 576px) {
+      padding: 3rem;
+    }
   }
   &-header {
     font-size: 3rem;
     font-weight: 300;
+    @media (max-width: 576px) {
+      font-size: 1rem;
+    }
     span {
       display: block;
       font-size: 5rem;
       font-weight: 300;
       margin-bottom: -1.5rem;
+      @media (max-width: 576px) {        
+        display: inline;
+        font-weight: 300;
+        margin-bottom: 0rem;
+        font-size: 1rem;
+      }
     }
   }
 

@@ -1,3 +1,4 @@
+
 //  Activity Routes
 module.exports = {
     path: '/actions',
@@ -10,8 +11,8 @@ module.exports = {
             component: () => import('@/components/activity/Home.vue'),
         },
         {
-            path: 'poll',
-            name: 'poll',
+            path: 'polls',
+            name: 'polls',
             component: () => import('@/components/activity/Poll.vue'),
         },
         {
@@ -24,6 +25,17 @@ module.exports = {
             name: 'projects',
             component: () => import('@/components/activity/Projects.vue'),
         },
+        {
+            path: 'projects/:id',
+            name: 'ViewProject',
+            component: () => import('@/components/projects/ViewProject.vue'),
+        },
+        {
+            path: 'poll',
+            name: 'poll',
+            component: () => import('@/components/poll/ViewPoll.vue'),
+        },
+
 
     ]
 }

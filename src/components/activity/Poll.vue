@@ -12,15 +12,19 @@
       </div>
     </div>
     <div class="section-polls my-3">
-      <p>Available Polls</p>
+      <div class="alerts my-3">
+        <!-- <div v-if="!this.projects" class="alert alert-secondary" role="alert">
+          Aww... Don't cry, Nothing has started
+        </div> -->
+      </div>
       <div class="card mb-3">
         <div class="card-header">
           Anonymous
         </div>
         <div class="card-body">
           <h5 class="card-title">University Cricket Team Selection</h5>
-          <a href="#" class="btn btn-light">Join Now</a>
         </div>
+        <a href="#" class="btn btn-light">Join Now</a>
         <div class="card-footer text-muted">
           Posted : 2 days ago
         </div>

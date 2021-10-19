@@ -14,6 +14,7 @@
                 id="input-project-title"
                 placeholder="Project Title"
                 required
+                v-model="project.title"
                 autocomplete="off"
               />
             </div>
@@ -23,9 +24,10 @@
               >
               <textarea
                 required
+                v-model="project.description"
                 class="form-control"
                 id="exampleFormControlTextarea1"
-                rows="6"
+                rows="10"
               ></textarea>
             </div>
             <div class="mb-3">
@@ -33,11 +35,26 @@
                 >Repository Link</label
               >
               <input
+                v-model="project.repository"
                 type="url"
                 class="form-control"
                 autocomplete="off"
-                id="input-project-title"
+                id="input-project-repo"
                 placeholder="Project Git Repo Link"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Cover Image</label
+              >
+              <input
+                v-model="project.coverImageUrl"
+                type="url"
+                class="form-control"
+                autocomplete="off"
+                id="input-project-cover-img"
+                placeholder="Add Project Cover"
                 required
               />
             </div>
@@ -53,10 +70,13 @@
                 Assign Team
               </button>
             </div>
-
-            <button type="submit" class="btn btn-primary">Add Project</button>
+            <button type="submit" class="btn btn-primary my-3">
+              Add Project
+            </button>
           </form>
         </div>
+
+        <!-- ASSIGN TEAM PANEL -->
         <div
           class="offcanvas offcanvas-end"
           tabindex="-1"
@@ -88,12 +108,29 @@ export default {
   name: "AddProject",
   created() {},
   data() {
-    return {};
+    return {
+      project: {
+        title: "",
+        description: "",
+        repository: "",
+        coverImageUrl: "",
+      },
+    };
   },
-  props: {},
   methods: {
     submitProject() {
-      alert("Project Added");
+      let project = this.project;
+      const user = this.$store.getters.getCurrentUser;
+      project.postedBy = user._id;
+      this.$store.dispatch("POST_PROJECT", project).then((res) => {
+        alert(res.data.msg);
+        this.project = {
+          title: "",
+          description: "",
+          repository: "",
+          coverImageUrl: "",
+        };
+      });
     },
   },
 };

@@ -32,7 +32,7 @@ export default {
         },
         {
           name: "Live Poll",
-          to: "poll",
+          to: "polls",
         },
         {
           name: "Confab",
